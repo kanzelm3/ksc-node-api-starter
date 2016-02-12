@@ -9,6 +9,7 @@ What's inside
  - eslint
  - Lab
  - Code
+ - Istanbul
  - Babel
 
 Note: This project is based on Node v5.x, so that Babel is used only for compatibility reasons to older Node versions.

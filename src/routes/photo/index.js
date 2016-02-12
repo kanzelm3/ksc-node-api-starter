@@ -1,10 +1,10 @@
 import Joi from 'joi';
-import Boom from 'boom';
+import handler from './handler';
 
 export default (server) => {
   server.route({
     method: 'GET',
-    path: '/photo/{id*}',
+    path: '/photo/{id}',
     config: {
       description: 'Get photo by id',
       notes: 'Returns photo for the ID passed in the path',
@@ -19,10 +19,7 @@ export default (server) => {
             .description('the ID of the photo'),
         },
       },
-      handler: (request, reply) => {
-        // until we implement authentication we are simply returning a 401:
-        reply(Boom.unauthorized('Please log-in to see that'));
-      },
+      handler,
     },
   });
 };
